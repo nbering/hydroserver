@@ -26,66 +26,54 @@ var clientPromise = soapWrapper.createClient(settings.wsdl);
 
 switch (input.command)
 {
-    case "--help":
-        clientPromise.then(function(client){
-            console.log ("Available Commands:\n");
-            var prop;
-            for (prop in client)
-            {
-                if (client.hasOwnProperty(prop) && typeof client[prop] === "function")
-                    console.log(prop);
-            }
-        });
-    case "GetSites":
+    case "sites":
         clientPromise
             .then(function(client){
-                return soapWrapper.invokeMethod(client,"WaterOneFlow", "WaterOneFlow", "GetSites", {site:{}});
+                return soapWrapper.invokeMethod(
+                    client,
+                    input.values.service || settings.defaults.service,
+                    input.values.port || settings.defaults.port,
+                    "GetSitesObject",
+                    {
+                        site: {}
+                    });
             })
             .then(function(result){
-                console.log(result.GetSitesResult);
-                return soapWrapper.parseXml(result.GetSitesResult);
-            })
-            .then(function(result){
-                result.sitesResponse.site.forEach(site => {
-                    console.log(site.siteInfo[0].siteName[0] + ": " + JSON.stringify(site.siteInfo[0].siteCode[0]));
-                });
-            });
-            break;
-
-    case "GetSitesObject":
-        clientPromise
-            .then(function(client){
-                return soapWrapper.invokeMethod(client, "WaterOneFlow", "WaterOneFlow", "GetSitesObject", {site: {}});
-            })
-            .then(function(result){
-                console.log(result.sitesResponse);
                 result.sitesResponse.site.forEach(site =>
                 {
-                    console.log(`${site.siteInfo.siteName}:${JSON.stringify(site.siteInfo.siteCode)}`);
+                    console.log(`--- ${site.siteInfo.siteName} ---`);
+                    console.log(`ID: ${site.siteInfo.siteCode[0].attributes.network}:${site.siteInfo.siteCode[0].$value}`);
+                    console.log("\n");
                 });
             });
             break;
 
-    case "GetSiteInfoObject":
+    case "site":
         clientPromise
             .then(function(client){
-                return soapWrapper.invokeMethod(client, "WaterOneFlow", "WaterOneFlow", "GetSiteInfoObject", {site: input.values.site || settings.defaults.site});
+                return soapWrapper.invokeMethod(
+                    client,
+                    input.values.service || settings.defaults.service,
+                    input.values.port || settings.defaults.port,
+                     "GetSiteInfoObject",
+                     {
+                         site: input.values.site || settings.defaults.site
+                     });
             })
             .then(function(result){
                 var site = result.sitesResponse.site[0];
-                console.log(JSON.stringify(site, null, 4));
 
                 console.log("--- Site Info ---");
                 console.log(`Name: ${site.siteInfo.siteName}`);
-                console.log(`Reference: ${site.siteInfo.siteCode[0].attributes.network}:${site.siteInfo.siteCode[0].$value}`);
-                console.log("\n");
+                console.log(`ID: ${site.siteInfo.siteCode[0].attributes.network}:${site.siteInfo.siteCode[0].$value}`);
+                console.log("");
 
                 console.log("--- Catalog ---");
 
                 site.seriesCatalog[0].series.forEach(series =>
                 {
                     console.log(series.variable.variableName);
-                    console.log(`Reference: ${series.variable.variableCode[0].attributes.vocabulary}:${series.variable.variableCode[0].$value}`);
+                    console.log(`ID: ${series.variable.variableCode[0].attributes.vocabulary}:${series.variable.variableCode[0].$value}`);
                     console.log(`Data Points: ${series.valueCount}`);
                     console.log(`Begins: ${series.variableTimeInterval.beginDateTime}`);
                     console.log(`Ends: ${series.variableTimeInterval.endDateTime}`);
@@ -96,13 +84,13 @@ switch (input.command)
                 console.log("Error.", error);
             });
             break;
-    case "GetValuesObject":
+    case "values":
         clientPromise
             .then(function(client){
                 return soapWrapper.invokeMethod(
                     client,
-                    "WaterOneFlow",
-                    "WaterOneFlow",
+                    input.values.service || settings.defaults.service,
+                    input.values.port || settings.defaults.port,
                     "GetValuesObject",
                     {
                         location: input.values.site || settings.defaults.site,
@@ -121,40 +109,28 @@ switch (input.command)
             });
             break;
 
+    case "help":
     default:
-        console.log("WTF?");
-        /*
-        clientPromise.then(function(client)
-        {
-            var serviceDescription = client.describe();
-            var methods = serviceDescription["WaterOneFlow"]["WaterOneFlow"];
-
-            if (!methods.hasOwnProperty(input.command))
-                return console.error("Command is not a method on service.");
-
-            var prop = "", args = {};
-            for (prop in methods[input.command].input)
-            {
-                if (methods[input.command].input.hasOwnProperty(prop) && typeof methods[input.command].input[prop] === "object")
-                    args[prop] = {};
-            }
-
-            var resultKey = Object.keys(methods[input.command].output)[0];
-
-            client[input.command](args, function(error, result)
-            {
-                if (error)
-                    return console.error("Request Error!");
-
-                xml2js.parseString(result[resultKey], function(error, resultObj){
-                    if (error)
-                        return console.error("Parse Error!");
-
-                    resultObj.sitesResponse.site.forEach(site => {
-                        console.log(site.siteInfo[0].siteName[0] + ": " + JSON.stringify(site.siteInfo[0].siteCode[0]));
-                    });
-                });
-            });
-        });
-        */
+        console.log("usage: hydroserver [command] [options]");
+        console.log("");
+        console.log("commands:");
+        console.log("  help");
+        console.log("  site");
+        console.log("  sites");
+        console.log("  values");
+        console.log("options:");
+        console.log("  --site, -l");
+        console.log("    Site ID. Example: NPCA:BALLS_FALLS");
+        console.log("  --start-date, -s");
+        console.log("    Start date when fetching values. Format: yyyy-mm-ddThh:mm:ss");
+        console.log("    Example: 2016-08-02T13:00:00");
+        console.log("  --end-date, -e");
+        console.log("    End date when fetching values. Same as above.");
+        console.log("  --variable, -v");
+        console.log("    Data series to fetch. Example: NPCA:FLOW");
+        console.log("  --service, -S");
+        console.log("    Service name from WSDL to use. Advanced option.");
+        console.log("  --port, -p");
+        console.log("    Port name from WSDL to use. Advanced option.");
+        console.log("");
 }
