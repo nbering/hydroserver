@@ -1,6 +1,6 @@
 {
   "name": "@nbering/hydroserver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Client for the Niagara Peninsula Conservation Authority watershed monitor service.",
   "main": "index.js",
   "bin": {
@@ -10,9 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
-      "name": "Nicholas Bering",
-      "email": "bering.nicholas@gmail.com",
-      "url": "http://nicholasbering.ca"
+    "name": "Nicholas Bering",
+    "email": "bering.nicholas@gmail.com",
+    "url": "http://nicholasbering.ca"
   },
   "license": "MIT",
   "dependencies": {
@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/nbering/hydroserver",
   "bugs": {
-      "url": "https://github.com/nbering/hydroserver/issues"
+    "url": "https://github.com/nbering/hydroserver/issues"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/nbering/hydroserver.git"
+    "type": "git",
+    "url": "https://github.com/nbering/hydroserver.git"
   }
 }
