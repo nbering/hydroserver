@@ -38,14 +38,7 @@ switch (input.command)
                         site: {}
                     });
             })
-            .then(function(result){
-                result.sitesResponse.site.forEach(site =>
-                {
-                    console.log(`--- ${site.siteInfo.siteName} ---`);
-                    console.log(`ID: ${site.siteInfo.siteCode[0].attributes.network}:${site.siteInfo.siteCode[0].$value}`);
-                    console.log("\n");
-                });
-            });
+            .then(input.formatter.sites);
             break;
 
     case "site":
@@ -60,26 +53,7 @@ switch (input.command)
                          site: input.values.site || settings.defaults.site
                      });
             })
-            .then(function(result){
-                var site = result.sitesResponse.site[0];
-
-                console.log("--- Site Info ---");
-                console.log(`Name: ${site.siteInfo.siteName}`);
-                console.log(`ID: ${site.siteInfo.siteCode[0].attributes.network}:${site.siteInfo.siteCode[0].$value}`);
-                console.log("");
-
-                console.log("--- Catalog ---");
-
-                site.seriesCatalog[0].series.forEach(series =>
-                {
-                    console.log(series.variable.variableName);
-                    console.log(`ID: ${series.variable.variableCode[0].attributes.vocabulary}:${series.variable.variableCode[0].$value}`);
-                    console.log(`Data Points: ${series.valueCount}`);
-                    console.log(`Begins: ${series.variableTimeInterval.beginDateTime}`);
-                    console.log(`Ends: ${series.variableTimeInterval.endDateTime}`);
-                    console.log("\n");
-                });
-            })
+            .then(input.formatter.site)
             .catch(function(error){
                 console.log("Error.", error);
             });
@@ -100,10 +74,7 @@ switch (input.command)
                         endDate: input.values.endDate || settings.defaults.endDate
                     });
             })
-            .then(function(result){
-                var values = result.timeSeriesResponse.timeSeries.values;
-                console.log(values);
-            })
+            .then(input.formatter.values)
             .catch(function(error){
                 console.log("Error.", error);
             });
