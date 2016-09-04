@@ -1,0 +1,1028 @@
+{
+  "WaterOneFlow": {
+    "WaterOneFlow": {
+      "GetSites": {
+        "input": {
+          "site": {
+            "string[]": "s:string",
+            "targetNSAlias": "tns",
+            "targetNamespace": "http://www.cuahsi.org/his/1.0/ws/"
+          },
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetSitesResult": "s:string"
+        }
+      },
+      "GetSiteInfo": {
+        "input": {
+          "site": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetSiteInfoResult": "s:string"
+        }
+      },
+      "GetVariableInfo": {
+        "input": {
+          "variable": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetVariableInfoResult": "s:string"
+        }
+      },
+      "GetSitesObject": {
+        "input": {
+          "site": {
+            "string[]": "s:string",
+            "targetNSAlias": "tns",
+            "targetNamespace": "http://www.cuahsi.org/his/1.0/ws/"
+          },
+          "authToken": "s:string"
+        },
+        "output": {
+          "sitesResponse": {
+            "queryInfo": {
+              "creationTime": "s:dateTime",
+              "queryURL": "s:string",
+              "querySQL": "s:string",
+              "criteria": {
+                "locationParam": "s:string",
+                "variableParam": "s:string",
+                "timeParam": {
+                  "beginDateTime": "s:string",
+                  "endDateTime": "s:string"
+                }
+              },
+              "note[]": "s:string",
+              "extension": {},
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "site[]": {
+              "siteInfo": {
+                "siteName": "s:string",
+                "siteCode[]": "s:string",
+                "timeZoneInfo": {
+                  "defaultTimeZone": {},
+                  "daylightSavingsTimeZone": {}
+                },
+                "geoLocation": {
+                  "geogLocation": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "localSiteXY[]": {
+                    "X": "s:double",
+                    "Y": "s:double",
+                    "Z": "s:double",
+                    "note[]": "s:string"
+                  }
+                },
+                "elevation_m": "s:double",
+                "verticalDatum": "s:string",
+                "note[]": "s:string",
+                "extension": {},
+                "altname": {},
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "seriesCatalog[]": {
+                "note[]": "s:string",
+                "series[]": {
+                  "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                  "variable": {
+                    "variableCode[]": {},
+                    "variableName": "s:string",
+                    "variableDescription": "s:string",
+                    "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                    "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                    "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                    "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                    "units": "s:string",
+                    "options": {
+                      "option[]": "s:string",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "note[]": "s:string",
+                    "related": {
+                      "parentID[]": "s:string",
+                      "relatedID[]": "s:string"
+                    },
+                    "extension": {},
+                    "NoDataValue": "s:string",
+                    "timeSupport": {
+                      "unit": {
+                        "UnitName": "s:string",
+                        "UnitDescription": "s:string",
+                        "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                        "UnitAbbreviation": "s:string",
+                        "targetNSAlias": "s1",
+                        "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                      },
+                      "timeInterval": "s:int"
+                    },
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueCount": "s:int",
+                  "variableTimeInterval": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                  "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                  "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                  "Method": {
+                    "MethodDescription": "s:string",
+                    "MethodLink": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "Source": {
+                    "Organization": "s:string",
+                    "SourceDescription": "s:string",
+                    "Metadata": {
+                      "TopicCategory": "s:string",
+                      "Title": "s:string",
+                      "Abstract": "s:string",
+                      "ProfileVersion": "s:string",
+                      "MetadataLink": "s:anyURI",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "ContactInformation": {
+                      "ContactName": "s:string",
+                      "TypeOfContact": "s:string",
+                      "Phone": "s:string",
+                      "Email": "s:string",
+                      "Address": {},
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "SourceLink": "s:anyURI",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "QualityControlLevel": "s:string"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "extension": {}
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          },
+          "targetNSAlias": "s1",
+          "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+        }
+      },
+      "GetSiteInfoObject": {
+        "input": {
+          "site": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "sitesResponse": {
+            "queryInfo": {
+              "creationTime": "s:dateTime",
+              "queryURL": "s:string",
+              "querySQL": "s:string",
+              "criteria": {
+                "locationParam": "s:string",
+                "variableParam": "s:string",
+                "timeParam": {
+                  "beginDateTime": "s:string",
+                  "endDateTime": "s:string"
+                }
+              },
+              "note[]": "s:string",
+              "extension": {},
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "site[]": {
+              "siteInfo": {
+                "siteName": "s:string",
+                "siteCode[]": "s:string",
+                "timeZoneInfo": {
+                  "defaultTimeZone": {},
+                  "daylightSavingsTimeZone": {}
+                },
+                "geoLocation": {
+                  "geogLocation": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "localSiteXY[]": {
+                    "X": "s:double",
+                    "Y": "s:double",
+                    "Z": "s:double",
+                    "note[]": "s:string"
+                  }
+                },
+                "elevation_m": "s:double",
+                "verticalDatum": "s:string",
+                "note[]": "s:string",
+                "extension": {},
+                "altname": {},
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "seriesCatalog[]": {
+                "note[]": "s:string",
+                "series[]": {
+                  "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                  "variable": {
+                    "variableCode[]": {},
+                    "variableName": "s:string",
+                    "variableDescription": "s:string",
+                    "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                    "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                    "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                    "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                    "units": "s:string",
+                    "options": {
+                      "option[]": "s:string",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "note[]": "s:string",
+                    "related": {
+                      "parentID[]": "s:string",
+                      "relatedID[]": "s:string"
+                    },
+                    "extension": {},
+                    "NoDataValue": "s:string",
+                    "timeSupport": {
+                      "unit": {
+                        "UnitName": "s:string",
+                        "UnitDescription": "s:string",
+                        "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                        "UnitAbbreviation": "s:string",
+                        "targetNSAlias": "s1",
+                        "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                      },
+                      "timeInterval": "s:int"
+                    },
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueCount": "s:int",
+                  "variableTimeInterval": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                  "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                  "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                  "Method": {
+                    "MethodDescription": "s:string",
+                    "MethodLink": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "Source": {
+                    "Organization": "s:string",
+                    "SourceDescription": "s:string",
+                    "Metadata": {
+                      "TopicCategory": "s:string",
+                      "Title": "s:string",
+                      "Abstract": "s:string",
+                      "ProfileVersion": "s:string",
+                      "MetadataLink": "s:anyURI",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "ContactInformation": {
+                      "ContactName": "s:string",
+                      "TypeOfContact": "s:string",
+                      "Phone": "s:string",
+                      "Email": "s:string",
+                      "Address": {},
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "SourceLink": "s:anyURI",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "QualityControlLevel": "s:string"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "extension": {}
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          },
+          "targetNSAlias": "s1",
+          "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+        }
+      },
+      "GetVariableInfoObject": {
+        "input": {
+          "variable": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "variablesResponse": {
+            "variables": {
+              "variable[]": {
+                "variableCode[]": {},
+                "variableName": "s:string",
+                "variableDescription": "s:string",
+                "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                "units": "s:string",
+                "options": {
+                  "option[]": "s:string",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "note[]": "s:string",
+                "related": {
+                  "parentID[]": "s:string",
+                  "relatedID[]": "s:string"
+                },
+                "extension": {},
+                "NoDataValue": "s:string",
+                "timeSupport": {
+                  "unit": {
+                    "UnitName": "s:string",
+                    "UnitDescription": "s:string",
+                    "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                    "UnitAbbreviation": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "timeInterval": "s:int"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          }
+        }
+      },
+      "GetValues": {
+        "input": {
+          "location": "s:string",
+          "variable": "s:string",
+          "startDate": "s:string",
+          "endDate": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetValuesResult": "s:string"
+        }
+      },
+      "GetValuesObject": {
+        "input": {
+          "location": "s:string",
+          "variable": "s:string",
+          "startDate": "s:string",
+          "endDate": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "timeSeriesResponse": {
+            "queryInfo": {
+              "creationTime": "s:dateTime",
+              "queryURL": "s:string",
+              "querySQL": "s:string",
+              "criteria": {
+                "locationParam": "s:string",
+                "variableParam": "s:string",
+                "timeParam": {
+                  "beginDateTime": "s:string",
+                  "endDateTime": "s:string"
+                }
+              },
+              "note[]": "s:string",
+              "extension": {},
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "timeSeries": {
+              "sourceInfo": {
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "variable": {
+                "variableCode[]": {},
+                "variableName": "s:string",
+                "variableDescription": "s:string",
+                "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                "units": "s:string",
+                "options": {
+                  "option[]": "s:string",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "note[]": "s:string",
+                "related": {
+                  "parentID[]": "s:string",
+                  "relatedID[]": "s:string"
+                },
+                "extension": {},
+                "NoDataValue": "s:string",
+                "timeSupport": {
+                  "unit": {
+                    "UnitName": "s:string",
+                    "UnitDescription": "s:string",
+                    "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                    "UnitAbbreviation": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "timeInterval": "s:int"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "values": {
+                "value[]": "s:decimal",
+                "qualifier[]": "s:string",
+                "qualityControlLevel": {
+                  "qualityControlLevelID": "s:normalizedString"
+                },
+                "method[]": {
+                  "MethodDescription": "s:string",
+                  "MethodLink": "s:string",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "source[]": {
+                  "Organization": "s:string",
+                  "SourceDescription": "s:string",
+                  "Metadata": {
+                    "TopicCategory": "s:string",
+                    "Title": "s:string",
+                    "Abstract": "s:string",
+                    "ProfileVersion": "s:string",
+                    "MetadataLink": "s:anyURI",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "ContactInformation": {
+                    "ContactName": "s:string",
+                    "TypeOfContact": "s:string",
+                    "Phone": "s:string",
+                    "Email": "s:string",
+                    "Address": {},
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "SourceLink": "s:anyURI",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "offset[]": {
+                  "offsetValue": "s:float",
+                  "offsetDescription": "s:string",
+                  "units": "s:string",
+                  "offsetIsVertical": "s:boolean",
+                  "offsetHorizDirectionDegrees": "s:int",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          }
+        }
+      }
+    },
+    "WaterOneFlow1": {
+      "GetSites": {
+        "input": {
+          "site": {
+            "string[]": "s:string",
+            "targetNSAlias": "tns",
+            "targetNamespace": "http://www.cuahsi.org/his/1.0/ws/"
+          },
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetSitesResult": "s:string"
+        }
+      },
+      "GetSiteInfo": {
+        "input": {
+          "site": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetSiteInfoResult": "s:string"
+        }
+      },
+      "GetVariableInfo": {
+        "input": {
+          "variable": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetVariableInfoResult": "s:string"
+        }
+      },
+      "GetSitesObject": {
+        "input": {
+          "site": {
+            "string[]": "s:string",
+            "targetNSAlias": "tns",
+            "targetNamespace": "http://www.cuahsi.org/his/1.0/ws/"
+          },
+          "authToken": "s:string"
+        },
+        "output": {
+          "sitesResponse": {
+            "queryInfo": {
+              "creationTime": "s:dateTime",
+              "queryURL": "s:string",
+              "querySQL": "s:string",
+              "criteria": {
+                "locationParam": "s:string",
+                "variableParam": "s:string",
+                "timeParam": {
+                  "beginDateTime": "s:string",
+                  "endDateTime": "s:string"
+                }
+              },
+              "note[]": "s:string",
+              "extension": {},
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "site[]": {
+              "siteInfo": {
+                "siteName": "s:string",
+                "siteCode[]": "s:string",
+                "timeZoneInfo": {
+                  "defaultTimeZone": {},
+                  "daylightSavingsTimeZone": {}
+                },
+                "geoLocation": {
+                  "geogLocation": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "localSiteXY[]": {
+                    "X": "s:double",
+                    "Y": "s:double",
+                    "Z": "s:double",
+                    "note[]": "s:string"
+                  }
+                },
+                "elevation_m": "s:double",
+                "verticalDatum": "s:string",
+                "note[]": "s:string",
+                "extension": {},
+                "altname": {},
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "seriesCatalog[]": {
+                "note[]": "s:string",
+                "series[]": {
+                  "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                  "variable": {
+                    "variableCode[]": {},
+                    "variableName": "s:string",
+                    "variableDescription": "s:string",
+                    "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                    "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                    "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                    "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                    "units": "s:string",
+                    "options": {
+                      "option[]": "s:string",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "note[]": "s:string",
+                    "related": {
+                      "parentID[]": "s:string",
+                      "relatedID[]": "s:string"
+                    },
+                    "extension": {},
+                    "NoDataValue": "s:string",
+                    "timeSupport": {
+                      "unit": {
+                        "UnitName": "s:string",
+                        "UnitDescription": "s:string",
+                        "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                        "UnitAbbreviation": "s:string",
+                        "targetNSAlias": "s1",
+                        "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                      },
+                      "timeInterval": "s:int"
+                    },
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueCount": "s:int",
+                  "variableTimeInterval": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                  "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                  "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                  "Method": {
+                    "MethodDescription": "s:string",
+                    "MethodLink": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "Source": {
+                    "Organization": "s:string",
+                    "SourceDescription": "s:string",
+                    "Metadata": {
+                      "TopicCategory": "s:string",
+                      "Title": "s:string",
+                      "Abstract": "s:string",
+                      "ProfileVersion": "s:string",
+                      "MetadataLink": "s:anyURI",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "ContactInformation": {
+                      "ContactName": "s:string",
+                      "TypeOfContact": "s:string",
+                      "Phone": "s:string",
+                      "Email": "s:string",
+                      "Address": {},
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "SourceLink": "s:anyURI",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "QualityControlLevel": "s:string"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "extension": {}
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          },
+          "targetNSAlias": "s1",
+          "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+        }
+      },
+      "GetSiteInfoObject": {
+        "input": {
+          "site": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "sitesResponse": {
+            "queryInfo": {
+              "creationTime": "s:dateTime",
+              "queryURL": "s:string",
+              "querySQL": "s:string",
+              "criteria": {
+                "locationParam": "s:string",
+                "variableParam": "s:string",
+                "timeParam": {
+                  "beginDateTime": "s:string",
+                  "endDateTime": "s:string"
+                }
+              },
+              "note[]": "s:string",
+              "extension": {},
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "site[]": {
+              "siteInfo": {
+                "siteName": "s:string",
+                "siteCode[]": "s:string",
+                "timeZoneInfo": {
+                  "defaultTimeZone": {},
+                  "daylightSavingsTimeZone": {}
+                },
+                "geoLocation": {
+                  "geogLocation": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "localSiteXY[]": {
+                    "X": "s:double",
+                    "Y": "s:double",
+                    "Z": "s:double",
+                    "note[]": "s:string"
+                  }
+                },
+                "elevation_m": "s:double",
+                "verticalDatum": "s:string",
+                "note[]": "s:string",
+                "extension": {},
+                "altname": {},
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "seriesCatalog[]": {
+                "note[]": "s:string",
+                "series[]": {
+                  "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                  "variable": {
+                    "variableCode[]": {},
+                    "variableName": "s:string",
+                    "variableDescription": "s:string",
+                    "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                    "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                    "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                    "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                    "units": "s:string",
+                    "options": {
+                      "option[]": "s:string",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "note[]": "s:string",
+                    "related": {
+                      "parentID[]": "s:string",
+                      "relatedID[]": "s:string"
+                    },
+                    "extension": {},
+                    "NoDataValue": "s:string",
+                    "timeSupport": {
+                      "unit": {
+                        "UnitName": "s:string",
+                        "UnitDescription": "s:string",
+                        "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                        "UnitAbbreviation": "s:string",
+                        "targetNSAlias": "s1",
+                        "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                      },
+                      "timeInterval": "s:int"
+                    },
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueCount": "s:int",
+                  "variableTimeInterval": {
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                  "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                  "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                  "Method": {
+                    "MethodDescription": "s:string",
+                    "MethodLink": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "Source": {
+                    "Organization": "s:string",
+                    "SourceDescription": "s:string",
+                    "Metadata": {
+                      "TopicCategory": "s:string",
+                      "Title": "s:string",
+                      "Abstract": "s:string",
+                      "ProfileVersion": "s:string",
+                      "MetadataLink": "s:anyURI",
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "ContactInformation": {
+                      "ContactName": "s:string",
+                      "TypeOfContact": "s:string",
+                      "Phone": "s:string",
+                      "Email": "s:string",
+                      "Address": {},
+                      "targetNSAlias": "s1",
+                      "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                    },
+                    "SourceLink": "s:anyURI",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "QualityControlLevel": "s:string"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "extension": {}
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          },
+          "targetNSAlias": "s1",
+          "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+        }
+      },
+      "GetVariableInfoObject": {
+        "input": {
+          "variable": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "variablesResponse": {
+            "variables": {
+              "variable[]": {
+                "variableCode[]": {},
+                "variableName": "s:string",
+                "variableDescription": "s:string",
+                "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                "units": "s:string",
+                "options": {
+                  "option[]": "s:string",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "note[]": "s:string",
+                "related": {
+                  "parentID[]": "s:string",
+                  "relatedID[]": "s:string"
+                },
+                "extension": {},
+                "NoDataValue": "s:string",
+                "timeSupport": {
+                  "unit": {
+                    "UnitName": "s:string",
+                    "UnitDescription": "s:string",
+                    "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                    "UnitAbbreviation": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "timeInterval": "s:int"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          }
+        }
+      },
+      "GetValues": {
+        "input": {
+          "location": "s:string",
+          "variable": "s:string",
+          "startDate": "s:string",
+          "endDate": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "GetValuesResult": "s:string"
+        }
+      },
+      "GetValuesObject": {
+        "input": {
+          "location": "s:string",
+          "variable": "s:string",
+          "startDate": "s:string",
+          "endDate": "s:string",
+          "authToken": "s:string"
+        },
+        "output": {
+          "timeSeriesResponse": {
+            "queryInfo": {
+              "creationTime": "s:dateTime",
+              "queryURL": "s:string",
+              "querySQL": "s:string",
+              "criteria": {
+                "locationParam": "s:string",
+                "variableParam": "s:string",
+                "timeParam": {
+                  "beginDateTime": "s:string",
+                  "endDateTime": "s:string"
+                }
+              },
+              "note[]": "s:string",
+              "extension": {},
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "timeSeries": {
+              "sourceInfo": {
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "variable": {
+                "variableCode[]": {},
+                "variableName": "s:string",
+                "variableDescription": "s:string",
+                "valueType": "valueTypeEnum|s:string|Field Observation,Sample,Model Simulation Result,Derived Value,Unknown",
+                "dataType": "dataTypeEnum|s:string|Continuous,Instantaneous,Cumulative,Incremental,Average,Maximum,Minimum,Constant Over Interval,Categorical,Best Easy Systematic Estimator ,Unknown,Variance",
+                "generalCategory": "generalCategoryEnum|s:string|Water Quality,Climate,Hydrology,Geology,Biota,Unknown",
+                "sampleMedium": "SampleMediumEnum|s:string|Surface Water,Ground Water,Sediment,Soil,Air,Tissue,Precipitation,Unknown",
+                "units": "s:string",
+                "options": {
+                  "option[]": "s:string",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "note[]": "s:string",
+                "related": {
+                  "parentID[]": "s:string",
+                  "relatedID[]": "s:string"
+                },
+                "extension": {},
+                "NoDataValue": "s:string",
+                "timeSupport": {
+                  "unit": {
+                    "UnitName": "s:string",
+                    "UnitDescription": "s:string",
+                    "UnitType": "UnitsTypeEnum|s:string|Angle,Area,Dimensionless,Energy,Energy Flux,Flow,Force,Frequency,Length,Light,Mass,Permeability,Power,Pressure/Stress,Resolution,Scale,Temperature,Time,Velocity,Volume",
+                    "UnitAbbreviation": "s:string",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "timeInterval": "s:int"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "values": {
+                "value[]": "s:decimal",
+                "qualifier[]": "s:string",
+                "qualityControlLevel": {
+                  "qualityControlLevelID": "s:normalizedString"
+                },
+                "method[]": {
+                  "MethodDescription": "s:string",
+                  "MethodLink": "s:string",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "source[]": {
+                  "Organization": "s:string",
+                  "SourceDescription": "s:string",
+                  "Metadata": {
+                    "TopicCategory": "s:string",
+                    "Title": "s:string",
+                    "Abstract": "s:string",
+                    "ProfileVersion": "s:string",
+                    "MetadataLink": "s:anyURI",
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "ContactInformation": {
+                    "ContactName": "s:string",
+                    "TypeOfContact": "s:string",
+                    "Phone": "s:string",
+                    "Email": "s:string",
+                    "Address": {},
+                    "targetNSAlias": "s1",
+                    "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                  },
+                  "SourceLink": "s:anyURI",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "offset[]": {
+                  "offsetValue": "s:float",
+                  "offsetDescription": "s:string",
+                  "units": "s:string",
+                  "offsetIsVertical": "s:boolean",
+                  "offsetHorizDirectionDegrees": "s:int",
+                  "targetNSAlias": "s1",
+                  "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+                },
+                "targetNSAlias": "s1",
+                "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+              },
+              "targetNSAlias": "s1",
+              "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+            },
+            "targetNSAlias": "s1",
+            "targetNamespace": "http://www.cuahsi.org/waterML/1.0/"
+          }
+        }
+      }
+    }
+  }
+}

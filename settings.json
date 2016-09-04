@@ -1,0 +1,9 @@
+{
+    "wsdl": "http://www.his.npca.ca/waterdataservices_quantity/cuahsi_1_1.asmx?WSDL",
+    "defaults": {
+        "site": "NPCA:BALLS_FALLS",
+        "variable": "NPCA:FLOW",
+        "startDate": "2010-01-01T00:00:00",
+        "endDate": "2011-01-01T23:59:59"
+    }
+}

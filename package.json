@@ -1,0 +1,18 @@
+{
+  "name": "@nbering/hydroserver",
+  "version": "0.0.1",
+  "description": "Client for the Niagara Peninsula Conservation Authority watershed monitor service.",
+  "main": "index.js",
+  "bin": {
+    "hydroserver": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Bering",
+  "license": "MIT",
+  "dependencies": {
+    "soap": "^0.16.0",
+    "xml2js": "^0.4.17"
+  }
+}
