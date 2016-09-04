@@ -103,5 +103,11 @@ switch (input.command)
         console.log("    Service name from WSDL to use. Advanced option.");
         console.log("  --port, -p");
         console.log("    Port name from WSDL to use. Advanced option.");
+        console.log("  --human-readable, -H");
+        console.log("    Format output for humans.");
+        console.log("  --json, -j");
+        console.log("    Format output as JSON for machines.");
+        console.log("  --google-chart, -g");
+        console.log("    Format output as a Google Visualization API DataTable.");
         console.log("");
 }
