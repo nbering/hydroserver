@@ -1,6 +1,6 @@
 {
   "name": "@nbering/hydroserver",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Client for the Niagara Peninsula Conservation Authority watershed monitor service.",
   "main": "index.js",
   "bin": {
