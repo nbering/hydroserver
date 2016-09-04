@@ -9,10 +9,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Nicholas Bering",
+  "author": {
+      "name": "Nicholas Bering",
+      "email": "bering.nicholas@gmail.com",
+      "url": "http://nicholasbering.ca"
+  },
   "license": "MIT",
   "dependencies": {
     "soap": "^0.16.0",
     "xml2js": "^0.4.17"
+  },
+  "homepage": "https://github.com/nbering/hydroserver",
+  "bugs": {
+      "url": "https://github.com/nbering/hydroserver/issues"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/nbering/hydroserver.git"
   }
 }
