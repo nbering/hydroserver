@@ -15,6 +15,37 @@ fetch data from the HydroServer run by the [Niagara Peninsula Conversation Autho
 Not even close. At this point the tool is just a proof of concept. I'll be working
 a little more on it to make it more functional and add documentation.
 
+## Instructions
+
+### Install
+
+You'll need  NodeJS and NPM. Developed and tested on NodeJS v6.5.0.
+
+```
+$ npm install --global @nbering/hydroserver
+```
+
+### Usage
+
+For basic usage instructions, run:
+
+```
+$ hydroserver help
+```
+
+### Common Commands
+
+```sh
+# List Monitoring Sites
+$ hydroserver sites
+
+# Show Details About a Site
+$ hydroserver site --site NPCA:BALLS_FALLS
+
+# Get Some Data Points
+$ hydroserver values --start-date 2010-01-01T00:00:00 --end-date 2010-01-31T23:59:59 --variable NPCA:FLOW --site NPCA:BALLS_FALLS
+```
+
 ## Contributing
 
 The project's a bit of a mess right now but I welcome issues for feature suggestions,
