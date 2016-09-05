@@ -43,7 +43,11 @@ $ hydroserver sites
 $ hydroserver site --site NPCA:BALLS_FALLS
 
 # Get Some Data Points
-$ hydroserver values --start-date 2010-01-01T00:00:00 --end-date 2010-01-31T23:59:59 --variable NPCA:FLOW --site NPCA:BALLS_FALLS
+$ hydroserver values \
+    --start-date 2010-01-01T00:00:00 \
+    --end-date 2010-01-31T23:59:59 \
+    --variable NPCA:FLOW \
+    --site NPCA:BALLS_FALLS
 ```
 
 ## Contributing
